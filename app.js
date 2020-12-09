@@ -4,6 +4,8 @@ var path = require('path');
 var bodyParser = require('body-parser'); // importing body parser middleware to parse form content from HTML
 var nodemailer = require('nodemailer'); //importing node mailer
 
+const mailList = 'email@gmail.com, email@gmail.com';
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -19,8 +21,8 @@ app.post('/sendemail', (req, res, next) => {
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'automated.nodemailer@gmail.com', //replace with your email
-      pass: 'password@nodemailer', //replace with your password
+      user: 'email@gmail.com', //replace with your email
+      pass: 'password', //replace with your password
     },
   });
 
@@ -32,7 +34,7 @@ app.post('/sendemail', (req, res, next) => {
   */
   var mailOptions = {
     from: 'automated.nodemailer@gmail.com', //replace with your email
-    to: 'lookatemail@gmail.com', //replace with your email
+    to: mailList, //replace with your email
     subject: `Contact name: ${req.body.name}`,
     html: `<h1>Contact details</h1>
           <h2> name:${req.body.name} </h2><br>
@@ -55,4 +57,7 @@ app.post('/sendemail', (req, res, next) => {
     }
   });
 });
-app.listen(1234);
+
+const port = 3000;
+
+app.listen(port, () => console.log(`Server Started on Port ${port}`));
