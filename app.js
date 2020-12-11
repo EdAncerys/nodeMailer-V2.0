@@ -1,8 +1,9 @@
-var express = require('express');
-var app = express();
-var path = require('path');
-var bodyParser = require('body-parser'); // importing body parser middleware to parse form content from HTML
-var nodemailer = require('nodemailer'); //importing node mailer
+const express = require('express');
+const app = express();
+const path = require('path');
+const bodyParser = require('body-parser'); // importing body parser middleware to parse form content from HTML
+const nodemailer = require('nodemailer'); //importing node mailer
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public'))); // serving our contact form on '/' route
@@ -17,7 +18,7 @@ app.post('/sendEmail', (req, res, next) => {
 here we are using gmail as our service
 In Auth object , we specify our email and password
 */
-  var transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: nodeAccount, //replace with your email
@@ -30,7 +31,7 @@ In our case , we use our personal email as from and to address,
 Subject is Contact name and
 html is our form details which we parsed using bodyParser.
 */
-  var mailOptions = {
+  const mailOptions = {
     from: nodeAccount, //replace with your email
     to: mailList, //replace with your email
     subject: `Contact name: ${req.body.name}`,
