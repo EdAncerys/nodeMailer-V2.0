@@ -46,13 +46,14 @@ html is our form details which we parsed using bodyParser.
 call back as parameter
 */
 
-  transporter.sendMail(mailOptions, function (error, info) {
+  transporter.sendMail(mailOptions, (error, info) => {
+    // e.preventDefault();
     if (error) {
       console.log(error);
       res.send('error'); // if error occurs send error as response to client
     } else {
       console.log('Email sent: ' + info.response);
-      res.send('Sent Successfully'); //if mail is sent successfully send Sent successfully as response
+      res.send('Sent Successfully ' + info.response); //if mail is sent successfully send Sent successfully as response
     }
   });
 });

@@ -9,17 +9,12 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <form onsubmit="alert('submit!');return false">
-      First: Enter in the input field
-      <input type="text" value="Text Sample" /><br />
-      Second: Click "submit": <input type="submit" value="Submit" />
-    </form>
     <div class="container">
       <form
         id="contact"
         action="/sendEmail"
         method="post"
-        onsubmit="alert('submit!')"
+        onsubmit="alert('Email Submitted!')"
       >
         <h3>Contact Form</h3>
         <fieldset>
