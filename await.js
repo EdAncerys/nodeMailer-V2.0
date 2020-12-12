@@ -30,7 +30,7 @@ async function contactForm() {
     to: process.env.MAILING_LIST,
 
     // Subject of the message
-    subject: `Contact name: ${req.body.name}`,
+    subject: `Contact name: ${document.getElementsByID('name')}`,
 
     // plaintext body
     text: 'Hello plaintext body!',
@@ -52,7 +52,7 @@ async function contactForm() {
   transporter.close();
 }
 
-main().catch((err) => {
+contactForm().catch((err) => {
   console.error(err.message);
   process.exit(1);
 });
