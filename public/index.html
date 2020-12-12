@@ -4,10 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>nodeMailer</title>
+    <script defer src="./JS/index.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
+    <div>
+      <form id="contact" action="/testLink" method="post">
+        <h3>Test Form</h3>
+
+        <fieldset>
+          <textarea
+            placeholder="Type your message here...."
+            tabindex="5"
+            name="message"
+            autofocus
+          ></textarea>
+        </fieldset>
+        <fieldset>
+          <button
+            name="submit"
+            type="submit"
+            id="submit"
+            data-submit="...Sending"
+          >
+            Submit
+          </button>
+        </fieldset>
+      </form>
+      <a id="myAnchor" href="https://w3schools.com/" style="color: red"
+        >Go to W3Schools.com</a
+      >
+    </div>
     <div class="container">
       <form id="contact" action="/sendEmail" method="post">
         <h3>Contact Form</h3>

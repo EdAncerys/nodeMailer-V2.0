@@ -45,6 +45,7 @@ html is our form details which we parsed using bodyParser.
  Here comes the important part, sendMail is the method which actually sends email, it takes mail options and
 call back as parameter
 */
+
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
