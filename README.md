@@ -11,5 +11,5 @@
 - Install all dependencies
   `$ npm install`
 - Start the server
-  `$ npm start`
+  `$ npm start` or simply run nodemon
 - Navigate to [http://localhost:3000](http://localhost:3000) in your browser

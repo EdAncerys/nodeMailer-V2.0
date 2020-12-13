@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>nodeMailer</title>
-    <script defer src="./JS/index.js"></script>
+    <!-- <script defer src="./JS/index.js"></script> -->
+    <script defer src="../await.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
@@ -58,6 +59,30 @@
             name="submit"
             type="submit"
             id="contact-submit"
+            data-submit="...Sending"
+          >
+            Submit
+          </button>
+        </fieldset>
+      </form>
+    </div>
+
+    <!-- Form Element sent from await.js -->
+    <div class="container">
+      <form id="contact" onsubmit="formSubmit()">
+        <h3>await Form</h3>
+        <fieldset>
+          <textarea
+            placeholder="Type your message here...."
+            tabindex="5"
+            name="message"
+          ></textarea>
+        </fieldset>
+        <fieldset>
+          <button
+            name="submit"
+            type="submit"
+            id="await-submit"
             data-submit="...Sending"
           >
             Submit
