@@ -53,7 +53,8 @@ call back as parameter
       res.send('error'); // if error occurs send error as response to client
     } else {
       console.log('Email sent: ' + info.response);
-      res.send('Sent Successfully ' + info.response); //if mail is sent successfully send Sent successfully as response
+      res.sendFile(path.join(__dirname, 'public', 'index.html'));
+      // res.render('Sent Successfully ' + info.response); //if mail is sent successfully send Sent successfully as response
     }
   });
 });
